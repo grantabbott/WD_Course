@@ -6,27 +6,67 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
- 
+
     </head>
-    <body>
+    <body style="background-color: #476B6B">
         <!--Project for HTML Chapter. 1-->
+
         <center><h1>My Test page for Chapter 1 HTML project</h1></center>
-        <p>
-            In this section I will imbed a youtube video and an image of the solar system. From there I will put in horizontal line breaks to disperse the data since we will not be using CSS to give it some style.
-        </p>
-        
-        <hr />
-        
-        <img src="http://upload.wikimedia.org/wikipedia/commons/6/6b/Muybridge_runner.jpg" width=50% align="left">
-        
-        <iframe align="right" width="280" height="157" src="https://www.youtube.com/embed/Kkk3Jefdf2o" frameborder="0" allowfullscreen></iframe>
-        <br /><br />
-            <hr />
-            
-            <!--This does not look right on JSfiddle but this is the correct syntax. For some reason the allofullscreen is messing up the iframe option above and throwing everything off. It was remove to make this work on jsfiddle-->
-            
-            <h2>Fact about running</h2>
-            <p>Running is healthy for you. It is a good form of excercise. To learn more <a href="http://en.wikipedia.org/wiki/Running" targe="_blank">click here</a>
-            
-    </body>
+
+        <p>In this section I will imbed a random running youtube video for simplicity sakes.
+          I also included an image that is sourced to wikipedia. I input horizontal line to
+          disperse the data since we will not be using CSS to give the webpage style.</p>
+
+<hr />
+      <div>
+        <img src="http://upload.wikimedia.org/wikipedia/commons/6/6b/Muybridge_runner.jpg" style="margin: 20px" width=35% />
+        <iframe width="460" height="315" src="https://www.youtube.com/embed/Kkk3Jefdf2o" frameborder="0" style="margin: 35px" allowfullscreen></iframe>
+      </div>
+
+<br />
+<br />
+
+<hr />
+
+    <h2>Fact about running</h2>
+    <p>Running is healthy for you. It is a good form of excercise. To learn more <a href="http://en.wikipedia.org/wiki/Running" targe="_blank">click here</a></p>
+
+<hr />
+    <table>
+      <tr><th> Name </th><th> Year Born </th><th> Year Record Held</th></tr>
+        <tr><td><center>Usain Bolt</center></td><td><center>1986</center></td><td><center>2009</center></td></tr>
+        <tr><td><center>Tyson Gay</center></td><td><center>1982</center></td><td><center>2009</center></td></tr>
+        <tr><td><center>Yohan Blake</center></td><td><center>1989</center></td><td><center>2012</center></td></tr>
+    </table>
+
+<hr />
+<br />
+  <form>
+    <input type="email" placeholder="Email" style="width: 200px"/> &#64;
+        <select>
+          <option name="email" id="1">google.com</option>
+          <option name="email" id="2">hotmail.com</option>
+          <option name="email" id="3">yahoo.com</option>
+          <option name="email" id="4">ymail.com</option>
+        </select>
+
+    <h4>Do you like your e-mail provider</h4>
+    <input type="radio" name="emailLike" id="1">Yes
+    <input type="radio" name="emailLike" id="2">No
+
+    <h4>Would you ever change your email provider</h4>
+    <input type="radio" name="changeemail" id="1">Yes
+    <input type="radio" name="changeemail" id="2">No
+
+<br />
+<br />
+    <textarea rows="10" cols="60" placeholder="What do you think about this site just using HTML?"></textarea>
+<br />
+<br />
+    <input type="submit" value="Submit It!" />
+<br />
+<br />
+
+    </form>
+  </body>
 </html>
