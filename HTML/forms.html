@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>First Webpage</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+
+<body>
+<div>
+<!-- The different options in a form -->
+    <form>
+        <!--Input email address for the form. Good for validation checking-->
+        <input type="email" placeholder="Email Address" name="email" />
+        <br /> <br />
+        <input type="text" placeholder="First Name" name="fname" />
+        <br /> <br />
+        <textarea placeholder="Tell us about yourself" name="textarea"> </textarea>
+        <br /> <br />
+        <select>
+            <option value="init" disable>Select and Option</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br /> <br />
+
+        <input type="radio" name="color" />Red
+        <input type="radio" name="color" />Black
+        <br /> <br />
+
+        <input type="checkbox" name="animal" value="1"> Dog
+        <input type="checkbox" name="animal" value="1"> Cat
+        <input type="checkbox" name="animal" value="1"> Fish
+        <br /> <br />
+
+        <input type="submit" value="Click This!">
+<!--
+The important thing to note is that the submit button actually runs a GET command and if this was ran on an actual website and not on JSfiddle when you push submit the URL will change with a ? at the end and then the parameters along with the value. The way this works is that it uses the name values in the form elements like an Primary Key in a database. The value however, could be different (obviously). Then when the form is submitted the values are sent back to be processes. This is where PHP XSS comes into play.
+-->
+    </form>
+
+
+</div>
+</body>
+</html>
