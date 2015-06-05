@@ -1,0 +1,114 @@
+
+<!doctype html>
+<html>
+<head>
+
+<!--
+This section covers:
+- Margin
+- Padding
+
+-->
+
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+
+        p {
+          font-family: cursive;
+          padding: 0;
+          margin: 0;
+        }
+
+
+        .large {
+          font-size: 300%;
+          color: purple;
+        }
+
+
+        .underline {
+          text-decoration: underline;
+        }
+
+        .bold {
+          font-weight: bold;
+        }
+
+        .bluebox {
+          background-color: blue;
+          width: 100px;
+          height: 300px;
+          /*Margin set the parimeter around the DIV
+          margin: 50px 20px 50px 20px; Top, right, bottom, left is the order.
+          If just two are set then it will clone it for the opposite side*/
+          margin-left: 50px;
+          margin-top: 10px;
+          margin-bottom: 20px;
+        }
+
+        .redbox {
+          background-color: red;
+          width: 300px;
+          height: 300px;
+          /*The padding is for setting the content inside the DIV. More padding
+          looks like it comes from the TOP and that is because the <P> tag has
+          margins built in so that space between the paragraphs look nice by default.
+          The same options for margins are available for padding. The padding adds
+          to the height of the page*/
+          padding: 40px 100px;
+        }
+
+        .greenbox {
+          background-color: #0ACB6D;
+          height: 150px;
+          /*The border adds to the height and width of the DIV/Element itself
+          In the case of a 5px border it adds 10px to the width and 10px to the
+          height. There are 3 attributes to define a border (as seen below).*/
+          border: 5px black solid;
+
+        }
+
+        .purplebox{
+          background-color: purple;
+          height: 150px;
+          width: 150px;
+          border-style: ridge solid dotted dashed;
+          border-width: 10px 5px 3px 3px;
+          border-color: green yellow blue black;
+          /*This is half the height and the width resulting in a circle*/
+          border-radius: 75px;
+        }
+
+        .purpleP{
+          padding: 27px;
+        }
+    </style>
+</head>
+
+<body>
+
+  <div class="bluebox">
+      <p>This is some text. </p>
+  </div>
+
+
+  <div class="redbox">
+      <p class="large">This is some more text. </p>
+  </div>
+
+<br>
+  <div class="greenbox">
+      <p>The 3rd <span class="underline large bold">paragraph</span> and the 3rd word is underlined.</p>
+  </div>
+
+<br>
+  <div class="purplebox">
+      <p class="purpleP">This is some text in the purple box. </p>
+  </div>
+
+  </body>
+</html>

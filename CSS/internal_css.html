@@ -1,0 +1,130 @@
+
+<!doctype html>
+<html>
+<head>
+
+<!--
+This section covers:
+- internal CSS
+- DIV tags
+- HTML Color Codes -- html-color-codes.info
+- classes & ID's
+-- It is recommeded to only use ID's for things that will appear on the page 1 time.
+Typically classes are used for CSS.
+-- ID's are used for Javascript to refer to only 1 item on a page
+
+
+
+This is not the best way to code CSS. However, for small projects this
+is a typical way of writing CSS.
+-->
+
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+        /*Refers to call Paragraph tags*/
+        p {
+          font-family: cursive;
+        }
+
+        /*Refers to all large classes*/
+        .large {
+          font-size: 300%;
+          color: red;
+        }
+
+        #green {
+          color: green;
+        }
+
+        .underline {
+          text-decoration: underline;
+        }
+
+        .bold {
+          font-weight: bold;
+        }
+
+        .bluebox {
+          background-color: blue;
+          width: 100px;
+          height: 300px;
+          float: left;
+        }
+
+        .redbox {
+          background-color: red;
+          width: 300px;
+          height: 300px;
+
+        }
+        /*floats either float left or right, floats will stack one next to the other.
+        As an example. 4 divs. The 2nd div will float but below the first div
+        if the first div is not set to float left. Otherwise the 2nd
+        div will float right next to the 1st div.
+        The same principle for float right except opposite. The 3rd div would
+        be most right, while the 4th div will be closer to the center
+        of the page.
+        */
+
+
+        .greenbox {
+          float: right;
+          background-color: #0ACB6D;
+          height: 150px;
+        }
+
+        .purplebox{
+          float: right;
+          background-color: purple;
+          height: 150px;
+        }
+
+        /*The clear:both option is used in an empty div to clear the floats.
+        In this case div1 and div2 will be sitting on top of each other both
+        floating left*/
+        .clear {
+          clear:both;
+        }
+    </style>
+</head>
+
+<body>
+
+  <!--Divs are rectangles on the page that can be controlled in a certain way
+  with CSS -->
+  <div class="bluebox">
+
+    <p id="green">This is some text. </p>
+
+  </div>
+
+  <div class="clear"></div>
+
+  <div class="redbox">
+  <!--Classes and ID's can be in the same line. It is recommended to save ID's
+  for other purposes such as Javascript -->
+  <p class="large" id="green">This is some more text. </p>
+  </div>
+
+
+
+  <div class="greenbox">
+  <!--You can give a tag multiple CSS classes. Seperated by spaces. -->
+  <p>The 3rd <span class="underline large bold">paragraph</span> and the 3rd word is underlined.</p>
+  </div>
+
+
+  <div class="purplebox">
+
+    <p>This is some text in the purple box. </p>
+
+  </div>
+
+
+
+  </body>
+</html>
