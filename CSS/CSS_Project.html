@@ -34,29 +34,105 @@ This section covers:
     }
 
     #logodiv{
-      padding-top: 5px;
       float: left;
       border-right: 1px solid #990000;
-      padding-right: 10px;
-    }
-
-    #signin{
-      padding-top: 10px;
-      float: left;
-      margin-left: 4px;
-      border-right: 1px solid #990000;
-      padding-right: 80px;
-      font-size: 0.9em;
-      font: bold;
+      padding: 5px 10px 9px 0;
     }
 
     #logodiv img{
       -webkit-filter: invert(100%);
+      margin-top: 3px;
+    }
+
+    #signin{
+      float: left;
+      margin-left: 4px;
+      border-right: 1px solid #990000;
+      padding: 10px 80px 13.5px 0;
+      font-size: 0.9em;
+      font-weight: bold;
     }
 
     #signin img{
       -webkit-filter: invert(100%);
+      position: relative;
+      top: 3px;
     }
+
+    #topmenu {
+      float: left;
+    }
+
+    #topmenu ul{
+      margin: 0px;
+      padding: 0;
+    }
+
+    #topmenu li{
+      list-style: none;
+      float: left;
+      font-weight: bold;
+      font-size: .9em;
+      border-right: 1px solid #990000;
+      height: 100%;
+      padding: 16px 20px 12.5px 20px;
+    }
+
+    #searchDiv {
+      float:left;
+      padding: 10px 0 0 10px;
+    }
+
+    #searchDiv input{
+      height: 24px;
+      width: 200px;
+      border: none;
+      font-size: 12px;
+      font-weight: bold;
+      background-image: url("logos/search.png");
+      background-repeat: no-repeat;
+      background-position: 95% center;
+
+    }
+
+    .break{
+      clear: both;
+    }
+
+    #newsBar{
+      background-color: #BB1919;
+      width: 100%;
+      height: 90px;
+      color: white;
+    }
+
+    #newsBar p {
+      margin: 0;
+      padding: 0;
+      padding-top: 10px;
+      float: left;
+    }
+
+    #newsHeader {
+      font-size: 3em;
+      padding-left: 10px
+    }
+
+    #newsHeader span {
+      font-size: 0.7em;
+      padding-left: 10px
+    }
+
+    #rss {
+      float: right;
+      margin-top: 38px;
+      font-weight: bold;
+    }
+    #rss img {
+      height: 15px;
+      padding-left: 4px;
+    }
+
     </style>
 </head>
 
@@ -70,8 +146,54 @@ This section covers:
           <div id="signin">
             <img src="logos/bbc_signin.png" /> Sign In
           </div>
+          <div id="topmenu">
+              <ul>
+                <li>News</li>
+                <li>Sport</li>
+                <li>Weather</li>
+                <li>TV</li>
+                <li>Radio</li>
+                <li>More...</li>
+              </ul>
+          </div>
+          <div id="searchDiv">
+            <input type="text" placeholder=" Search"/>
+          </div>
       </div>
     </div>
+
+    <div class="break"></div>
+
+    <div id="newsBar">
+      <div class="fixedwidth">
+          <p id="newsHeader">NEWS<span>UK</span></p>
+
+          <div id="rss">
+            RSS <img src="logos/rss.png" />
+          </div>
+
+          <div id="topicMenu">
+          <ul>
+            <li>Home</li>
+            <li>Video</li>
+            <li>World</li>
+            <li>US & Canada</li>
+            <li>UK</li>
+            <li>Business</li>
+            <li>Tech</li>
+            <li>Science</li>
+            <li>Magazine</li>
+            <li>Entertainment & Arts</li>
+            <li>Health</li>
+            <li>More</li>
+
+
+          </ul>
+          </div>
+
+      </div>
+    </div>
+
   </div>
 
 
