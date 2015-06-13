@@ -26,7 +26,7 @@ This section covers:
       width: 100%;
       height: 45px;
       color: white;
-      opacity: .85;
+      opacity: .90;
     }
 
     .fixedwidth{
@@ -76,7 +76,7 @@ This section covers:
       font-size: .9em;
       border-right: 1px solid #990000;
       height: 100%;
-      padding: 16px 20px 12.5px 20px;
+      padding: 16px 20px 12px 20px;
     }
 
     #searchDiv {
@@ -100,20 +100,43 @@ This section covers:
     }
 
     #newsBar{
-      background-color: #BB1919;
       width: 100%;
-      height: 90px;
+      height: 115px;
+      margin-top: -45px;
+      padding-top: 45px;
       color: white;
-      margin-top: 0;
-      padding: -45px 0 0 0;
       background-image: url("logos/globe.png");
+      background-size: 400px 400px;
       background-repeat: no-repeat;
-      background-position: 95% center;
+      background-position: 70% center;
     }
 
-    #newsBar p {
+
+    #rss {
+      float: right;
+      font-weight: bold;
+      margin: 15px 60px 0 0;
+    }
+
+    #rss img {
+      margin: 15px 60px 0 0;
+      height: 15px;
+      padding-left: 4px;
+    }
+
+    #newsContent{
+      background-color: #BB1919;
+      color: white;
+      width: 100%;
+      height: 80px;
+      padding: 0 0 0 0;
+      z-index: -1;
+      position:relative;
+    }
+
+    #newsContent p {
       margin: 0;
-      padding: 10px 0 0 0;
+      padding: 0;
       float: left;
     }
 
@@ -127,34 +150,85 @@ This section covers:
       padding-left: 10px
     }
 
-    #rss {
-      float: right;
-      margin-top: 38px;
-      font-weight: bold;
-    }
-    #rss img {
-      height: 15px;
-      padding-left: 4px;
-    }
 
     #topicMenu {
       float:left;
       width: 100%;
       background-color: #A91717;
-      margin: 0 0 0 -90px;
+      opacity: .90;
+    }
+
+    #topicContent {
+      margin: 0 0 0 120px;
       padding: 0 180px 0 0;
     }
 
-    #topicMenu ul {
+    #topicContent ul {
       margin: 0;
-      padding: 10px 0 25px 83px;
+      padding: 10px 0 25px 25px;
     }
 
-    #topicMenu li {
+    #topicContent li {
       list-style: none;
       float: left;
       padding: 0px 10px 0px 10px;
       border-right: 1px solid #990000;
+    }
+
+    #content {
+      padding-left: 5px;
+      font-size: .75em;
+    }
+
+    .date {
+    font-weight: bold;
+    }
+
+    #content h1{
+      color: #1F4F82;
+      font-size: 2.5em;
+    }
+
+    #headline {
+      float: left;
+      height: 240px;
+    }
+
+    #headlineText {
+      float: left;
+      position: relative;
+      top: -15px;
+      left: 10px;
+      width: 250px;
+      font-size: 1.1em;
+    }
+
+    #videoLinks {
+      height: 16px;
+    }
+
+    .topiclinks{
+      color: #000;
+      text-decoration: none;
+      padding-left: 24px;
+    }
+
+    .topicVideolinks{
+      color: #000;
+      text-decoration: none;
+    }
+
+
+    .topiclinks:hover{
+      text-decoration: underline;
+    }
+
+    .topicVideolinks:hover{
+      text-decoration: underline;
+    }
+
+    .links{
+      line-height: 1.6em;
     }
     </style>
 </head>
@@ -188,35 +262,62 @@ This section covers:
     <div class="break"></div>
 
     <div id="newsBar">
-      <div class="fixedwidth">
+        <div id="rss">
+          RSS <img src="logos/rss.png" />
+        </div>
+      <div id="newsContent">
+        <div class="fixedwidth">
           <p id="newsHeader">NEWS<span>UK</span></p>
-
-          <div id="rss">
-            RSS <img src="logos/rss.png" />
-          </div>
-
-
+        </div>
+      </div>
           <div id="topicMenu">
-          <ul>
-            <li>Home</li>
-            <li>Video</li>
-            <li>World</li>
-            <li>US & Canada</li>
-            <li>UK</li>
-            <li>Business</li>
-            <li>Tech</li>
-            <li>Science</li>
-            <li>Magazine</li>
-            <li>Entertainment & Arts</li>
-            <li>Health</li>
-            <li>More</li>
-          </ul>
+            <div id="topicContent">
+              <div class="fixedwidth">
+                <ul>
+                  <li>Home</li>
+                  <li>Video</li>
+                  <li>World</li>
+                  <li>US & Canada</li>
+                  <li>UK</li>
+                  <li>Business</li>
+                  <li>Tech</li>
+                  <li>Science</li>
+                  <li>Magazine</li>
+                  <li>Entertainment & Arts</li>
+                  <li>Health</li>
+                  <li>More</li>
+                </ul>
+              </div>
+            </div>
           </div>
+        </div>
+
+
+      <div class="break"></div>
+        <div id="content">
+          <div class="fixedwidth">
+              <p><span class="date">Saturday May 13, 2015</span> Last Updated at 12:10 GMT</p>
+
+              <h1>Pollution to spread accross England </h1>
+
+              <img id="headline" src="logos/headline.jpg" />
+
+              <div id="headlineText">
+                <p>
+                  BBC royal correspondent Nicholas Witchell said there was no doubt Prince George's first appearance on the balcony was the "headline image" of the day.
+                </p>
+
+                <p class="links">
+                  <a href="http://www.bbc.com/news/uk-33121168" class="topicVideolinks"><img src="logos/video.svg" id="videoLinks" /> Trooping the color ends in flypast</a>
+                  <a href="http://www.bbc.com/news/uk-33121168" class="topiclinks"> Prince royal balcony tradition</a>
+
+                </p>
+            </div>
+          </div>
+        </div>
+
 
       </div>
-    </div>
-
-  </div>
 
 
   </body>
