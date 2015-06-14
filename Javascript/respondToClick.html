@@ -1,0 +1,87 @@
+
+<!doctype html>
+<html>
+<head>
+
+<!--
+This section covers:
+- Responding to a click
+
+
+This is not way to code JS. However, for training purposes this works.
+It is recommended to use an external javascript file.
+-->
+
+    <title>Learning JS</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+
+
+    </style>
+</head>
+
+  <body>
+
+    <!--
+    -------------------------------------
+    Respond to a click
+    -------------------------------------
+    -->
+
+    <button id="Temptation"> You know you want to click me </button>
+    <br />
+    <br />
+    <button id="changeText"> Change the text </button>
+
+    <div id="randomDiv">This is a random string of text</div>
+
+    <br />
+    <br />
+    <button id="appendText"> Append the text </button>
+
+    <div id="appendDiv">This text will be... </div>
+
+    <br />
+    <br />
+    <button id="textMaker"> Make Text </button>
+
+    <div id="emptyDiv"> </div>
+
+
+
+<!--
+------------------------------------
+ALL THE JAVASCRIPT is below this line
+------------------------------------
+-->
+    <script type="text/javascript">
+
+    //Pops out an alert if the button is clicked
+    document.getElementById("Temptation").onclick=function(){
+      alert("hello");
+    }
+
+    //Changed some text
+    document.getElementById("changeText").onclick=function(){
+      document.getElementById("randomDiv").innerHTML="I have changed";
+    }
+
+    //Append some text
+    document.getElementById("appendText").onclick=function(){
+      document.getElementById("appendDiv").innerHTML=
+      document.getElementById("appendDiv").innerHTML + "APPENDED!!!";
+    }
+
+    //Put in an unordered list within javascript into an empty Div
+    document.getElementById("textMaker").onclick=function(){
+      document.getElementById("emptyDiv").innerHTML="<ul><li>Car</li><li>Motorcycle</li></ul>";
+    }
+
+
+    </script>
+
+  </body>
+</html>
