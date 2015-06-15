@@ -1,0 +1,77 @@
+
+<!doctype html>
+<html>
+<head>
+
+<!--
+This section covers:
+- Javascript Arrays
+
+This is not way to code JS. However, for training purposes this works.
+It is recommended to use an external javascript file.
+-->
+
+    <title>Learning JS</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+
+
+    </style>
+</head>
+
+  <body>
+
+    <button id="styleChanger">Change the text</button>
+
+    <div id="textGoesHere"> What would you like to eat today? </div>
+
+
+
+<!--
+------------------------------------
+ALL THE JAVASCRIPT is below this line
+------------------------------------
+-->
+    <script type="text/javascript">
+    var myArray = new Array();
+
+    myArray[0] = "Pizza";
+    myArray[1] = "Chocolate";
+    myArray[2] = "Ice-Cream";
+
+    var eating = 0;
+
+    document.getElementById('styleChanger').onclick=function(){
+      document.getElementById("textGoesHere").innerHTML=myArray[eating];
+      eating = eating + 1;
+
+      if (eating >= myArray.length){
+        eating = 0;
+      }
+    }
+
+    myOtherArray=["Rain", "Hail", "Sleet"];
+    console.log("Before pushing the SNOW you get:");
+    console.log(myOtherArray);
+
+    //This will put SNOW at the end of the myOtherArray Array
+    myOtherArray.push("Snow");
+    console.log("After pushing SNOW you get:");
+    console.log(myOtherArray);
+
+    myOtherArray.splice(1, 1); //Removes index location and how many indexs there after
+    console.log("After splicing Hail you get:");
+    console.log(myOtherArray);
+
+
+    //Adding hail (lowercase h) in the middle of an array
+    myOtherArray.splice(1, 0, "hail"); //Adds to the index location
+    console.log("After re-adding hail (lowercase) you get:");
+    console.log(myOtherArray);
+    </script>
+
+  </body>
+</html>
