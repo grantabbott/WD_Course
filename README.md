@@ -1,0 +1,38 @@
+# WD_Course
+The Complete Web Developer Course offered by Udemy
+https://www.udemy.com/complete-web-developer-course
+
+This information is my notes that I put together after taking the course on Udemy. 
+This course helps put together new ideas and refreshes my memory on web development. 
+
+The course notes are basic and will not provide deep insight into each language. 
+The best resources so far for further details are as follows:
+
+##########
+HTML:
+
+w3schools   - http://www.w3schools.com/html/default.asp <br />
+
+
+##########
+CSS:
+
+w3schools   - http://www.w3schools.com/css/default.asp  <br />
+webplatform - https://docs.webplatform.org/wiki/css <br />
+bootstrap   - http://getbootstrap.com/ <br />
+foundations - http://foundation.zurb.com/ <br />
+fontAwesome - http://fortawesome.github.io/Font-Awesome/icons/ <br />
+ColorCodes  - http://html-color-codes.info/ <br />
+
+
+#####
+Javascript:
+#####
+w3schools   - http://www.w3schools.com/js/default.asp <br />
+w3schools   - http://www.w3schools.com/jsref/default.asp (This covers the DOM reference for HTML) <br />
+JSisSexy    - http://javascriptissexy.com/javascript-objects-in-detail/ <br />
+MDN         - https://developer.mozilla.org/en-US/docs/Web/JavaScript <br />
+MDN         - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide <br />
+
+
+
