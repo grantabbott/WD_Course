@@ -11,11 +11,11 @@ The best resources so far for further details are as follows:
 ##########
 HTML:
 
-w3schools   - http://www.w3schools.com/html/default.asp
+w3schools   - http://www.w3schools.com/html/default.asp <br />
 
-<br />
+
 ##########
-CSS
+CSS:
 
 w3schools   - http://www.w3schools.com/css/default.asp  <br />
 webplatform - https://docs.webplatform.org/wiki/css <br />
@@ -26,7 +26,7 @@ ColorCodes  - http://html-color-codes.info/ <br />
 
 
 #####
-Javascript
+Javascript:
 #####
 w3schools   - http://www.w3schools.com/js/default.asp <br />
 w3schools   - http://www.w3schools.com/jsref/default.asp (This covers the DOM reference for HTML) <br />
