@@ -22,38 +22,47 @@ It is recommended to use an external javascript file.
       background-color: blue;
       height: 100px;
       width: 100px;
+      display: none;
+      position: relative;
     }
-    #box2{
-      background-color: red;
-      height: 100px;
-      width: 100px;
+    #coverageArea{
+      height: 400px;
+      width: 700px;
+
     }
-    #box3{
-      background-color: black;
-      height: 100px;
-      width: 100px;
+
+    body {
+      font-family: "Times New Roman", Times, serif;
     }
-    #box4{
-      background-color: yellow;
-      height: 100px;
-      width: 100px;
+
+    h1 {
+      text-align: center;
     }
-    #box5{
-      background-color: green;
-      height: 100px;
-      width: 100px;
+
+    p{
+      margin: 0;
+      padding: 0;
+    }
+
+    #Time, #fastestTime, #slowestTime {
+      font-weight: bold;
+      font-size: 1.2em;
+      font-style: italic;
     }
 
     </style>
 </head>
 
   <body>
+    <h1> Try and click the object as FAST as you can!</h1>
+    <p>Your Fastest Time: <span id="fastestTime">0</span> </p>
+    <p>Your Slowest Time: <span id="slowestTime">0</span> </p>
+    <p>Your Time: <span id="Time"> </span> </p>
 
-    <div id="box1"> </div>
-    <div id="box2"> </div>
-    <div id="box3"> </div>
-    <div id="box4"> </div>
-    <div id="box5"> </div>
+    <div id='coverageArea'>
+      <div id="box1">
+      </div>
+    </div>
 
 
 <!--
@@ -63,8 +72,107 @@ ALL THE JAVASCRIPT is below this line
 -->
     <script type="text/javascript">
 
+    /*
+    ***************************
+    Setting up the initial variables
+    ***************************
+    */
+    var clickedTime;
+    var createdTime;
+    var reactionTime;
+    var priorTime = '1000';
+    var slowestTime = '0';
+    /*
+    ***************************
+    */
+
+      //Setting the random color of the element
+      function randomColor(){
+        var letters = '0123456789ABCDEF'.split('');
+        var color = '#';
+        for (var i = 0; i < 6; i++){
+          color += letters[Math.round(Math.random() * 15)];
+        }
+        return color;
+      };
+
+      //Creating the box
+      function makeBox(){
+        /*
+        ***************************
+        Setting up the times
+        ***************************
+        */
+        //setting when the element will display
+        var time=Math.random();
+        time=time*4000;
+
+        //Setting the location of the element
+        var location = Math.random();
+        location = location * 350;
+
+        //Setting up the size of the element to click
+        var size = Math.random();
+        size = size*300;
+        size = Math.floor(size);
+
+        radius = size/2;
+
+        /*
+        ***************************
+        */
+
+        setTimeout(function(){
+
+          //Determines if the element will be a square or a circle
+          if (Math.random() > .5) {
+            document.getElementById('box1').style.height= size + 'px';
+            document.getElementById('box1').style.width= size + 'px';
+            document.getElementById('box1').style.borderRadius= radius + 'px';
+            document.getElementById('box1').style.top = location + 'px';
+            document.getElementById('box1').style.left = location + 'px';
+
+          }else{
+            document.getElementById('box1').style.borderRadius= '0px';
+            document.getElementById('box1').style.top = location + 'px';
+            document.getElementById('box1').style.left = location + 'px';
+          }
+
+          document.getElementById('box1').style.backgroundColor = randomColor();
+          document.getElementById('box1').style.display = "block";
+          createdTime = Date.now();
+
+      }, time);
+
+    }
+
+      document.getElementById('box1').onclick=function(){
+        //Sets the time the element was clicked
+        clickedTime = Date.now();
+
+        var reactionTime = (clickedTime - createdTime)/1000;
+
+        //Sets the time for fastestTime, longestTime and currentTime
+        if (reactionTime < priorTime){
+          priorTime = reactionTime;
+          document.getElementById('Time').innerHTML = reactionTime;
+          document.getElementById('fastestTime').innerHTML = priorTime;
+        }else if (reactionTime > slowestTime) {
+          slowestTime = reactionTime;
+          document.getElementById('Time').innerHTML = reactionTime;
+          document.getElementById('slowestTime').innerHTML = slowestTime;
+        }
+
+        else{
+          document.getElementById('Time').innerHTML = reactionTime;
+        }
+
+        this.style.display = "none";
+        makeBox();
+      }
+
+      makeBox();
 
     </script>
-
   </body>
 </html>
