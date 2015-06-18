@@ -33,6 +33,7 @@ It is recommended to use an external javascript file.
 
     body {
       font-family: "Times New Roman", Times, serif;
+      background-image: url("img/background.jpg");
     }
 
     h1 {
@@ -42,6 +43,25 @@ It is recommended to use an external javascript file.
     p{
       margin: 0;
       padding: 0;
+    }
+
+    #allTimes {
+      background-color: #fff;
+      float: left;
+      width: 200px;
+      height: 75px;
+      padding: 10px 10px 10px 30px;
+      margin-left: 20px;
+      border-radius: 15px;
+    }
+
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      height: 75vh;
+      width: 70%;
+      background-color: #fff;
+      border-radius: 15px;
     }
 
     #Time, #fastestTime, #slowestTime {
@@ -54,13 +74,18 @@ It is recommended to use an external javascript file.
 </head>
 
   <body>
-    <h1> Try and click the object as FAST as you can!</h1>
-    <p>Your Fastest Time: <span id="fastestTime">0</span> </p>
-    <p>Your Slowest Time: <span id="slowestTime">0</span> </p>
-    <p>Your Time: <span id="Time"> </span> </p>
+    <h1> Click the object as FAST as you can!</h1>
 
-    <div id='coverageArea'>
-      <div id="box1">
+    <div id="allTimes">
+      <p>Your Fastest Time: <span id="fastestTime">0</span>s </p>
+      <p>Your Slowest Time: <span id="slowestTime">0</span>s </p>
+      <p>Your Time: <span id="Time">0</span>s </p>
+    </div>
+
+    <div class="container">
+      <div id='coverageArea'>
+        <div id="box1">
+        </div>
       </div>
     </div>
 
@@ -105,17 +130,21 @@ ALL THE JAVASCRIPT is below this line
         */
         //setting when the element will display
         var time=Math.random();
-        time=time*4000;
+        time=time*3000;
 
-        //Setting the location of the element
-        var location = Math.random();
-        location = location * 350;
+        //Setting the height & width of the element
+        var height = Math.random();
+        height = height * 350;
+        var width = Math.random();
+        width = width * 1050;
 
         //Setting up the size of the element to click
         var size = Math.random();
         size = size*300;
         size = Math.floor(size);
-
+        if (size < 30){
+          size = size + 25;
+        }
         radius = size/2;
 
         /*
@@ -129,13 +158,13 @@ ALL THE JAVASCRIPT is below this line
             document.getElementById('box1').style.height= size + 'px';
             document.getElementById('box1').style.width= size + 'px';
             document.getElementById('box1').style.borderRadius= radius + 'px';
-            document.getElementById('box1').style.top = location + 'px';
-            document.getElementById('box1').style.left = location + 'px';
+            document.getElementById('box1').style.top = height + 'px';
+            document.getElementById('box1').style.left = width + 'px';
 
           }else{
             document.getElementById('box1').style.borderRadius= '0px';
-            document.getElementById('box1').style.top = location + 'px';
-            document.getElementById('box1').style.left = location + 'px';
+            document.getElementById('box1').style.top = height + 'px';
+            document.getElementById('box1').style.left = width + 'px';
           }
 
           document.getElementById('box1').style.backgroundColor = randomColor();
