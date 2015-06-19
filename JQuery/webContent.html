@@ -1,0 +1,102 @@
+
+<!doctype html>
+<html>
+<head>
+
+<!--
+This section covers:
+- Changing Website content using JQuery
+
+This is not way to code JS. However, for training purposes this works.
+It is recommended to use an external javascript file.
+-->
+
+    <title>Learning JQuery</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="library/jquery-1.11.3.min.js"> </script>
+
+    <style type="text/css">
+
+    #round1{
+      height: 80px;
+      width:  80px;
+      background-color: green;
+      border-radius: 40px;
+      margin: 20px;
+    }
+
+    #round2{
+      height: 80px;
+      width:  80px;
+      background-color: red;
+      border-radius: 40px;
+      margin: 20px;
+    }
+
+    iframe {
+      height: 600px;
+      width: 800px;
+    }
+
+    </style>
+</head>
+
+  <body>
+    <h2>(Click to see me change)</h2>
+    <div id="round1"> </div>
+    <p id='clickP'>Some Text</p>
+
+    <h2>(Hover to see me change)</h2>
+    <div id="round2"> </div>
+    <p id='hoverP'>Some Text</p>
+
+    <iframe src='http://www.foxnews.com'> </iframe> <br />
+    <button id="CheckSource">Check my Source</button>
+    <button id="ChangeSource">Change my Source</button>
+    <br />
+    <br />
+
+<!--
+------------------------------------
+ALL THE JQuery is below this line
+------------------------------------
+-->
+    <script>
+
+    /* In JQuery if you leave the content empty it will hold onto the value
+    that is set. However, if you give it a new value it will update it. This
+    allows the function to be used in 2 different ways.
+    See the example below */
+      $("#round1").click(function(){
+        var text = $('#clickP').html(); //Current value 'Some Text' stored to text variable
+
+        $("#clickP").html('New Text');  //Changed the value of id 'clickP' tags to 'New Text'
+
+        var text1 = $('#clickP').html(); //Now the value is 'New Text' stored to text1 variable
+
+        //  alert(text); //This will display 'Some Text'
+        //  alert(text1); //This will display 'New Text'
+      });
+
+      $("#round2").hover(function(){
+        $("#hoverP").html('New Text');
+      });
+
+      //Checking the current source attribute for the Iframe element
+      $('#CheckSource').click(function(){
+        /*The attr function allows you to return any attribute of a element. In the below
+        example we are returning the 'src' attribute for the iframe. */
+        alert($('iframe').attr('src')); //returns the current source.
+      });
+
+      //Changing the current source attribute for the Iframe element
+      $('#ChangeSource').click(function(){
+        $('iframe').attr('src', 'http://www.bing.com'); //The second parameter changes the source.
+      });
+
+    </script>
+  </body>
+</html>
