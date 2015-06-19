@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html>
+<head>
+
+<!--
+This section covers:
+- Using the fadeOut function within JQuery
+
+This is not way to code JS. However, for training purposes this works.
+It is recommended to use an external javascript file.
+-->
+
+    <title>Learning JQuery</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="library/jquery-1.11.3.min.js"> </script>
+
+    <style type="text/css">
+
+
+
+    </style>
+</head>
+
+  <body>
+    <p id="hiddenText">This is some text that will hide if you click the button below </p>
+    <button id="hideText">Hide the Text!</button>
+    <button id="showText">Show the Text!</button>
+
+
+
+<!--
+------------------------------------
+ALL THE JQuery is below this line
+------------------------------------
+-->
+    <script>
+
+
+        $('#hideText').click(function(){
+          //$("#hiddenText").fadeOut(); //Fades the paragraph out
+          //$("#hiddenText").fadeOut(2000); //Fades the paragraph out over 2000 milliseconds (2 seconds)
+          $("#hiddenText").fadeOut(2000, function(){
+            alert("I faded");
+          }); //Fades the paragraph out over 2000 milliseconds (2 seconds) then runs a function.
+        });
+
+        $('#showText').click(function(){
+          $("#hiddenText").fadeIn(); //Fades the paragraph in
+        });
+
+    </script>
+  </body>
+</html>

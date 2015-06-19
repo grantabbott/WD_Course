@@ -1,0 +1,80 @@
+
+<!doctype html>
+<html>
+<head>
+
+<!--
+This section covers:
+- Using the Animate function within JQuery
+
+This is not way to code JS. However, for training purposes this works.
+It is recommended to use an external javascript file.
+-->
+
+    <title>Learning JQuery</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="library/jquery-1.11.3.min.js"> </script>
+
+    <style type="text/css">
+
+
+        #box1{
+          height: 80px;
+          width:  80px;
+          background-color: red;
+          margin: 20px;
+        }
+
+        .box2{
+          height: 80px;
+          width:  80px;
+          background-color: blue;
+          margin: 20px;
+        }
+        #round1{
+          height: 80px;
+          width:  80px;
+          background-color: green;
+          border-radius: 40px;
+          margin: 20px;
+        }
+
+    </style>
+</head>
+
+  <body>
+    <div id="box1"> </div>
+    <div class="box2"> </div>
+    <div id="round1"> </div>
+
+
+
+<!--
+------------------------------------
+ALL THE JQuery is below this line
+------------------------------------
+-->
+    <script>
+
+      /*We will be using the JQuery animate function.
+          The 1st attribute is to describe what changes we want to make to the element clicked
+          The 2nd attribute is
+      */
+        $('div').click(function(){
+          //This one changes the width to 300px over 1500 milliseconds.
+          ////comma is used to seperate attributes
+          $(this).animate({
+            width:'300px',
+            height: '300px',
+            borderRadius: '150px',
+            marginLeft: '100px',
+            marginTop: '125px'
+          }, 900);
+        });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+
+<!doctype html>
+<html>
+<head>
+
+<!--
+This section covers:
+- Using the Ajax function within JQuery
+
+This is not way to code JS. However, for training purposes this works.
+It is recommended to use an external javascript file.
+-->
+
+    <title>Learning JQuery</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="library/jquery-1.11.3.min.js"> </script>
+
+    <style type="text/css">
+
+
+        #box1{
+          height: 80px;
+          width:  80px;
+          background-color: red;
+          margin: 20px;
+        }
+
+        .box2{
+          height: 80px;
+          width:  80px;
+          background-color: blue;
+          margin: 20px;
+        }
+        #round1{
+          height: 80px;
+          width:  80px;
+          background-color: green;
+          border-radius: 40px;
+          margin: 20px;
+        }
+
+    </style>
+</head>
+
+  <body>
+    <div id="box1"> </div>
+    <div class="box2"> </div>
+    <div id="round1"> </div>
+    <h1>Content before Ajax</h1>
+    <button id='ChangeAjax'>Change the Paragraph using Ajax</button>
+
+
+
+<!--
+------------------------------------
+ALL THE JQuery is below this line
+------------------------------------
+-->
+    <script>
+        /*
+        JQuery GET function. The data variable is used to pass the content
+        that is inside the test.html file to be placed in the data variable.
+
+        GET is not a suggested function. It is suggested to use the AJAX
+        function instead (Ajax function offers a lot more features).
+        */
+
+        /*
+        $.get('ajax/test.html', function(data){
+          alert(data);
+        });
+        */
+
+        //Using the ajax function to display/append content on a page
+        $('#ChangeAjax').click(function(){
+        $.ajax({
+          url: "ajax/test.html"
+
+        }).done(function(data){
+          //$('h1').html(data); //This changes the HTML content
+          $('h1').append('<br />' + data); //This appends the HTML content
+        });
+      });
+
+
+    </script>
+  </body>
+</html>
