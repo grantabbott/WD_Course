@@ -1,0 +1,129 @@
+
+<!doctype html>
+<html>
+<head>
+
+<!--
+This section covers:
+- Creating a mini form validation project. There are JQuery plugins to
+  do what was covered in this section. However, this covers everything from
+  scratch.
+
+This is not way to code JS. However, for training purposes this works.
+It is recommended to use an external javascript file.
+-->
+
+    <title>Learning JQuery</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="library/jquery-1.11.3.min.js"> </script>
+
+    <style type="text/css">
+
+      #container {
+        width: 550px;
+        margin: 0 auto;
+        font-size: 1.2em;
+        font-family: helvetica;
+      }
+
+      input {
+        width: 300px;
+        height: 20px;
+        padding: 3px;
+        border-radius: 5px;
+        border: 1px solid grey;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      label {
+        width: 200px;
+        float: left;
+        padding: 3px 10px 0 0;
+      }
+
+      #submitButton {
+        height: 40px;
+        width: 150px;
+        margin-left: 210px;
+      }
+
+      #error {
+        color: red;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-left: 210px;
+      }
+    </style>
+</head>
+
+  <body>
+
+    <div id='container'>
+
+      <div id='error'> </div>
+      <form id='validateForm'>
+        <label for="email">Email:</label>
+        <input name="email" id='email'/>
+
+        <label for="phone">Phone:</label>
+        <input name="phone" id="phone"/>
+
+        <label for="pass">Password:</label>
+        <input type='password' name="pass" id='pass1'/>
+
+        <label for="pass">Confirm Password:</label>
+        <input type='password' name="pass" id='pass2'/>
+
+        <input id='submitButton' type="submit" value="Submit" />
+    </form>
+
+  </div>
+<!--
+------------------------------------
+ALL THE JQuery is below this line
+------------------------------------
+-->
+    <script>
+
+      //JQuery has a function called submit
+      $('#validateForm').submit(function(){
+
+        var errorMSG='';
+
+        function isValidEmailAddress(emailAddress) {
+          var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+          return pattern.test(emailAddress);
+        };
+
+        //This validates if the email address is NOT valid
+        if (!isValidEmailAddress($('#email').val()) ) {
+          errorMSG='Please enter a valid E-Mail Address';
+        }
+
+        //This validates if the phone number is NOT valid
+        if (!$.isNumeric($('#phone').val()))  {
+          errorMSG=errorMSG + '<br />' +'Please enter a valid Phone Number';
+        }
+
+        //Validates the passwords match
+        if ($('#pass1').val() != $('#pass2').val())  {
+          errorMSG=errorMSG + '<br />' +'Please enter Matching Passwords';
+        }
+
+        $('#error').html(errorMSG);
+
+        if (errorMSG=='') {
+
+        } else {
+          event.preventDefault(); //This stops the default event from happening (ie: form being submitted)
+        }
+
+      });
+
+    </script>
+  </body>
+</html>

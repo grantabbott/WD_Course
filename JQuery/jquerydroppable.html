@@ -1,0 +1,76 @@
+
+<!doctype html>
+<html>
+<head>
+
+<!--
+This section covers:
+- This section covers the JQuery UI draggable & droppable function
+
+This is not way to code JS. However, for training purposes this works.
+It is recommended to use an external javascript file.
+-->
+
+    <title>Learning JQuery</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="library/jquery-1.11.3.min.js"> </script>
+    <!-- JQuery UI for CSS Offers more functions than just the JQuery UI offers-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <!-- JQuery UI -->
+    <script type="text/javascript" src="library/jquery-UI.min.js"> </script>
+
+    <style type="text/css">
+
+    #square{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    #square1{
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    #square2{
+      width: 200px;
+      height: 200px;
+      background-color: green;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    </style>
+</head>
+
+  <body>
+
+  <div id='square'>Drag me around</div>
+  <div id='square1'>Drag it to me!</div>
+  <div id='square2'>Resize Me & Drag me around</div>
+
+<!--
+------------------------------------
+ALL THE JQuery is below this line
+------------------------------------
+-->
+    <script>
+    //This is using the JQuery UI draggable function
+    $('#square').draggable();
+    $('#square1').droppable({
+      //There is a lot more too this JQuery UI droppable function. Read more on JQuery UI website.
+        drop: function(ui, event) {
+          $('#square1').css('background-color', 'red');
+        }
+    }); //This uses the JQuery UI CSS library to drop draggable items to it.
+
+
+    </script>
+  </body>
+</html>
