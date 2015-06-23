@@ -1,0 +1,206 @@
+
+<!doctype html>
+<html>
+<head>
+
+<!--
+This section covers:
+- JQuery project for building a CodePlayer
+
+This is not way to code JS. However, for training purposes this works.
+It is recommended to use an external javascript file.
+-->
+
+    <title>Learning JQuery</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="library/jquery-1.11.3.min.js"> </script>
+
+    <style type="text/css">
+
+
+        body {
+          margin: 0;
+          padding: 0;
+        }
+
+        .clear {
+          clear: both;
+        }
+
+        #menuBar {
+          width: 100%;
+          height: 40px;
+          background-color: #EDECED;
+          border-bottom: 1px solid grey;
+        }
+
+        #logo {
+          font-weight: bold;
+          font-size: 1.3em;
+          float: left;
+          margin: 8px 0 0 50px;
+        }
+
+        #runProgram {
+          float: right;
+          margin: 8px 50px 0 0;
+        }
+
+        #programmingOptions{
+          width: 196.9px;
+          margin: 0 auto;
+          list-style: none;
+          border: 1px solid grey;
+          padding: 0;
+          border-radius: 3px;
+          height: 27px;
+          position: relative;
+          top: 3px;
+        }
+
+        #programmingOptions li{
+          float: left;
+          border-right: 1px solid grey;
+          padding: 5px 8px;
+        }
+
+        .codeContainer {
+          height: 100%;
+          width: 50%;
+          float: left;
+          position: relative;
+        }
+
+        .codeContainer textarea {
+          width: 100%;
+          height: 100%;
+          border: none;
+          border-right: 1px solid grey;
+          font-family: monotype;
+          font-size: 1em;
+          padding: 5px;
+          box-sizing: border-box;
+        }
+
+        .codeLabel {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          background-color: #EDECED;
+          border-radius: 5px;
+          padding: 5px;
+        }
+
+        #CSSContainer, #JSContainer {
+          display: none;
+        }
+
+        .codeContainer iframe {
+          height: 100%;
+          width: 98%;
+          position: relative;
+          border: none;
+          left: 20px;
+          z-index: -1;
+        }
+
+        .selected {
+          background-color: grey;
+        }
+
+    </style>
+</head>
+
+  <body>
+
+    <div id='container'>
+      <div id='menuBar'>
+        <div id='logo'>
+          Abbotts CodePlayer
+        </div>
+
+        <div id='runProgram'>
+          <button id='runButton'>Run</button>
+        </div>
+
+        <ul id='programmingOptions'>
+          <li class="toggle selected">HTML</li>
+          <li class="toggle">CSS</li>
+          <li class="toggle">JS</li>
+          <li class="toggle selected" style='border: none;'>Result</li>
+        </ul>
+
+      </div>
+
+      <div class='clear'> </div>
+
+
+      <div class='codeContainer' id='HTMLContainer'>
+        <div class='codeLabel'>HTML</div>
+        <textarea id='htmlCode'></textarea>
+      </div>
+
+
+      <div class='codeContainer' id='CSSContainer'>
+        <div class='codeLabel'>CSS</div>
+        <textarea id='cssCode'></textarea>
+      </div>
+
+
+      <div class='codeContainer' id='JSContainer'>
+        <div class='codeLabel'>Javascript</div>
+        <textarea id='jsCode'></textarea>
+
+      </div>
+
+
+      <div class='codeContainer' id='ResultContainer'>
+        <div class='codeLabel'>Result</div>
+        <iframe id='resultFrame'> </iframe>
+      </div>
+
+    </div>
+
+<!--
+------------------------------------
+ALL THE JQuery is below this line
+------------------------------------
+-->
+    <script>
+      var windowHeight=$(window).height();
+      var menuBarHeight=$('#menuBar').height();
+      var codeContainerHeight = windowHeight-menuBarHeight;
+
+      $('.codeContainer').height(codeContainerHeight + "px");
+
+      //Toggle the programmingOptions
+      $('.toggle').click(function(){
+        $(this).toggleClass("selected");
+        var selectedDiv = $(this).html();
+        $('#' + selectedDiv + 'Container').toggle();
+
+        var showingDivs = $('.codeContainer').filter(function(){
+          return($(this).css('display') !="none");
+        }).length;
+
+        var windowWidth = 100/showingDivs;
+
+        $('.codeContainer').width(windowWidth + '%');
+
+      });
+
+
+      $('#runButton').click(function(){
+        $('iframe').contents().find('html').html('<style>' + $("#cssCode").val() +'</style>' + $("#htmlCode").val());
+
+      document.getElementById('resultFrame').contentWindow.eval( $('#jsCode').val() );
+      });
+
+
+
+    </script>
+  </body>
+</html>
