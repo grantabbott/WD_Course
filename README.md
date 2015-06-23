@@ -35,4 +35,15 @@ MDN         - https://developer.mozilla.org/en-US/docs/Web/JavaScript <br />
 MDN         - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide <br />
 
 
+#####
+JQuery:
+#####
+w3schools         - http://www.w3schools.com/jquery/default.asp <br />
+JQuery            - http://jquery.com/ <br />
+JQueryUI          - http://jqueryui.com/ <br />
+Tooltipster       - http://iamceege.github.io/tooltipster/ <br />
+magnific-popup    - http://dimsemenov.com/plugins/magnific-popup/ <br />
+Unslider          - http://unslider.com/ <br />
+TypeAhead         - http://twitter.github.io/typeahead.js/ <br />
+
 
