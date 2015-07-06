@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!--
-    This section covers the first Bootstrap webpage (hello world)
+    This section covers the Bootstrap Grid System
     -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,10 +19,30 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+      .box {
+        background-color: #d3d3d3;
+        border: 1px solid grey;
+      }
+
+    </style>
+
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <div class='container'>
+      <div class="row">
+        <div class="col-md-1 box">Content 1</div>
+        <div class="col-md-1 box">Content 2</div>
+        <div class="col-md-1 box">Content 3</div>
+      </div>
 
+      <div class="row">
+        <div class="col-md-4 box">Content 1</div>
+        <div class="col-md-4 box">Content 2</div>
+        <div class="col-md-4 box">Content 3</div>
+      </div>
+
+    </div>
     <!--
     ------------------------------------
     ALL the Javascript & JQuery is below this line
