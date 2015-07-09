@@ -47,3 +47,17 @@ Unslider          - http://unslider.com/ <br />
 TypeAhead         - http://twitter.github.io/typeahead.js/ <br />
 
 
+####
+Bootstrap:
+####
+BootStrap         - http://www.getbootstrap.com <br />
+BootStrap Tutor   - http://www.w3resource.com/twitter-bootstrap/tutorial.php <br />
+CheatSheet        - http://creativealive.com/master-cheat-sheet-twitter-bootstrap-3-pdf-download/ <br />
+CheatSheet        - https://dresssed.s3.amazonaws.com/bootstrap_cheatsheet.pdf <br />
+Themes (free/paid): <br />
+- https://wrapbootstrap.com/ <br />
+- http://bootswatch.com/ <br />
+- http://startbootstrap.com/ <br />
+- http://bootstrapzero.com/ <br />
+
+
